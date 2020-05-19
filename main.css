@@ -4,17 +4,35 @@
 }
 
 body {
-  background: #ddd;
+  margin: 0;
+  padding: 0;
+  background: #091945;
+  color: #fff;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  overflow-x: hidden;
 }
 
 .container {
+  padding: 0 1rem;
   max-width: 1100px;
   margin: auto;
+  text-align: center;
 }
 
-header h1 {
+.header-content {
+  height: 14vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-content h1 {
+  font-size: 3rem;
   text-align: center;
+}
+
+main {
+  height: 100vh;
 }
 
 #main-table ul {
@@ -26,19 +44,32 @@ header h1 {
 #main-table ul li {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  border-bottom: 2px solid #1c2c5c;
+}
+
+#main-table ul li:nth-child(1) {
+  border: 3px solid #1c2c5c;
+  border-radius: 100px;
+  padding: 0.5rem 0;
 }
 
 #main-table ul li div {
-  border: 1px solid #000;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+#main-table ul li .title {
+  font-style: italic;
+  text-align: center;
+}
+
 #add-info {
+  border: 2px #1c2c5c solid;
+  padding: 2rem 3rem;
   width: 300px;
-  margin: 2rem auto;
+  margin: 5rem auto;
   display: grid;
   grid-template-columns: 1fr;
   text-align: center;
@@ -49,9 +80,22 @@ header h1 {
   width: 100%;
 }
 
+#add-info #input-title {
+  margin-top: 1.5rem;
+}
+
+#add-info [type='text'] {
+  margin-top: 0.5rem;
+  width: 280px;
+  padding: 0.5rem;
+  background-color: #fff;
+  border: 1px #444 solid;
+}
+
 #add-info [type='submit'] {
   width: 100px;
-  margin: 2rem auto;
+  margin: 2rem auto 0 auto;
+  padding: 0.3rem 0;
 }
 
 .noShow {
@@ -60,5 +104,71 @@ header h1 {
 
 .show {
   display: inline;
+}
+
+.topBox {
+  display: grid;
+  font-size: 1.5rem;
+}
+
+.topBox p {
+  padding-left: 0.5rem;
+  font-weight: bold;
+}
+
+.footer-content {
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #060f29;
+  height: 5rem;
+}
+
+.footer-content p {
+  margin: auto;
+}
+
+@media (max-width: 500px) {
+  html {
+    width: auto !important;
+    overflow-x: hidden !important;
+  }
+  .header-content h1 {
+    font-size: 2rem;
+  }
+  main {
+    height: 120vh;
+  }
+  .container {
+    padding: 0 1.5rem;
+  }
+  #add-info {
+    padding: 1rem 0;
+    margin: 3rem 0;
+    width: auto;
+  }
+  #add-info #input-title,
+  #add-info #input-author,
+  #add-info #input-rating {
+    width: 200px;
+  }
+  .topBox {
+    font-size: 1rem;
+    height: 30px !important;
+  }
+}
+
+@media (max-height: 500px) {
+  .header-content {
+    height: 5rem;
+  }
+  .header-content h1 {
+    font-size: 2.3rem;
+  }
+  main {
+    height: 50rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */

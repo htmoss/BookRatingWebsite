@@ -8,38 +8,53 @@
 	</head>
 	<body>
 		<header>
-			<div class="container">
+			<div class="header-content container">
 				<h1>Mia's Book List</h1>
 			</div>
 		</header>
 		<main>
 			<div class="container">
-				<div id="main-table">
-					<!-- <ul>
-						<li>
-							<div class="title">Book 1</div>
-							<div class="autor">Author 1</div>
-							<div class="rating">5</div>
-						</li>
-						<li>
-							<div class="title">Book 2</div>
-							<div class="autor">Author 2</div>
-							<div class="rating">6</div>
-						</li>
-					</ul> -->
-				</div>
+				<div id="main-table"></div>
 				<div id="add-info">
-					<p>Add your own reviews below!</p>
-					<input id="input-title" type="text" placeholder="Book Title" />
-					<input id="input-author" type="text" placeholder="Author" />
-					<label for="rating">Rating</label>
-					<input id="input-rating" type="range" min="1" max="7" />
+					<p>Add your own reviews here:</p>
+					<input
+						id="input-title"
+						type="text"
+						placeholder="Book Title"
+						autocomplete="off"
+					/>
+					<input
+						id="input-author"
+						type="text"
+						placeholder="Author"
+						autocomplete="off"
+					/>
+					<br />
+					<label for="rating"><i>Rating</i></label>
+					<input
+						id="input-rating"
+						type="range"
+						value="1"
+						min="1"
+						max="7"
+						autocomplete="off"
+					/>
+					<p id="rating-num">1 out of 7</p>
 					<input id="new-book-submit" type="submit" value="Submit" />
+					<br />
 					<p id="warning" class="noShow">Please Try Again</p>
 				</div>
 			</div>
 		</main>
-
+		<footer>
+			<div class="footer-content">
+				<p>MBL &copy; 2020. All Rights Reserved</p>
+			</div>
+		</footer>
 		<script src="app.js"></script>
+		<script
+			src="https://kit.fontawesome.com/60fa2fe907.js"
+			crossorigin="anonymous"
+		></script>
 	</body>
 </html>
