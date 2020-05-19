@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>MBL | Mia's Book List</title>
+		<link rel="stylesheet" href="main.css" />
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<h1>Mia's Book List</h1>
+			</div>
+		</header>
+		<main>
+			<div class="container">
+				<div id="main-table">
+					<!-- <ul>
+						<li>
+							<div class="title">Book 1</div>
+							<div class="autor">Author 1</div>
+							<div class="rating">5</div>
+						</li>
+						<li>
+							<div class="title">Book 2</div>
+							<div class="autor">Author 2</div>
+							<div class="rating">6</div>
+						</li>
+					</ul> -->
+				</div>
+				<div id="add-info">
+					<p>Add your own reviews below!</p>
+					<input id="input-title" type="text" placeholder="Book Title" />
+					<input id="input-author" type="text" placeholder="Author" />
+					<label for="rating">Rating</label>
+					<input id="input-rating" type="range" min="1" max="7" />
+					<input id="new-book-submit" type="submit" value="Submit" />
+					<p id="warning" class="noShow">Please Try Again</p>
+				</div>
+			</div>
+		</main>
+
+		<script src="app.js"></script>
+	</body>
+</html>
