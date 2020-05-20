@@ -52,7 +52,7 @@ main {
 		li {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
-			border-bottom: 2px solid $light-blue;
+			border-bottom: 3px solid $light-blue;
 			&:nth-child(1) {
 				border: 3px solid $light-blue;
 				border-radius: 100px;
@@ -74,7 +74,8 @@ main {
 }
 
 #add-info {
-	border: 2px $light-blue solid;
+	border: 3px $light-blue solid;
+	border-radius: 15px;
 	padding: 2rem 3rem;
 	width: 300px;
 	margin: 5rem auto;
