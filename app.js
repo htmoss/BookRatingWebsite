@@ -61,9 +61,9 @@ const createBook = ({ title, author, rating }, bookTable) => {
 // Function for submit button, shows a warning if the entire rating has not been filled out
 submitBtn.addEventListener('click', function () {
 	const newBook = getBook();
-	document.getElementById('input-title').value = '';
-	document.getElementById('input-author').value = '';
-	let rating = document.getElementById('input-rating').value = 1;
+	document.querySelector('#input-title').value = '';
+	document.querySelector('#input-author').value = '';
+	let rating = document.querySelector('#input-rating').value = 1;
 	ratingNum.innerHTML = '<p id="rating-num">1 out of 7</p>';
 	console.log('newBook:', newBook);
 	if (newBook) {
@@ -78,9 +78,9 @@ submitBtn.addEventListener('click', function () {
 
 // gets input from user rating and pushes it to bookList
 const getBook = () => {
-	let title = document.getElementById('input-title').value;
-	let author = document.getElementById('input-author').value;
-	let rating = Number(document.getElementById('input-rating').value);
+	let title = document.querySelector('#input-title').value;
+	let author = document.querySelector('#input-author').value;
+	let rating = Number(document.querySelector('#input-rating').value);
 	if (title && author && rating) {
 		const newBook = {
 			title,
