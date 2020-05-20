@@ -61,6 +61,10 @@ const createBook = ({ title, author, rating }, bookTable) => {
 // Function for submit button, shows a warning if the entire rating has not been filled out
 submitBtn.addEventListener('click', function () {
 	const newBook = getBook();
+	document.getElementById('input-title').value = '';
+	document.getElementById('input-author').value = '';
+	let rating = document.getElementById('input-rating').value = 1;
+	ratingNum.innerHTML = '<p id="rating-num">1 out of 7</p>';
 	console.log('newBook:', newBook);
 	if (newBook) {
 		// takes away warning if it is already there
