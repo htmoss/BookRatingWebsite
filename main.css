@@ -67,12 +67,19 @@ main {
 
 #add-info {
   border: 2px #1c2c5c solid;
+  background: #1c2c5c;
+  border-radius: 5px;
   padding: 2rem 3rem;
   width: 300px;
   margin: 5rem auto;
   display: grid;
   grid-template-columns: 1fr;
   text-align: center;
+}
+
+#add-info p:first-child {
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
 #add-info * {
@@ -90,12 +97,41 @@ main {
   padding: 0.5rem;
   background-color: #fff;
   border: 1px #444 solid;
+  font-size: 1rem;
 }
 
 #add-info [type='submit'] {
+  background: #091945;
+  color: #fff;
+  border-radius: 15px;
+  border: none;
   width: 100px;
   margin: 2rem auto 0 auto;
-  padding: 0.3rem 0;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  transition: 0.2s all ease;
+}
+
+#add-info [type='submit']:hover {
+  opacity: 0.7;
+}
+
+#add-info #rating-box {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#add-info #rating-box > div {
+  display: flex;
+  flex-direction: column;
+}
+
+#add-info #rating-box .bottom-emoji {
+  position: relative;
+  font-size: 2.5rem;
+  top: -7px;
 }
 
 .noShow {
@@ -140,6 +176,9 @@ main {
   }
   main {
     height: 120vh;
+  }
+  #add-info #rating-box {
+    grid-template-columns: repeat(1, 1fr);
   }
   .container {
     padding: 0 1.5rem;

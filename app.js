@@ -4,11 +4,33 @@ const submitBtn = document.getElementById('new-book-submit');
 const mainTable = document.getElementById('main-table');
 const bookTable = document.createElement('ul');
 const addInfo = document.querySelector('#add-info');
+const bottomEmoji = document.querySelector('.bottom-emoji');
 
 // Showing the value of the range bar below the range bar
 rangeBar.addEventListener('change', function () {
-	ratingNum.textContent = `${rangeBar.value} out of 7`;
+	let rangeNum = rangeBar.value;
+	ratingNum.textContent = `${rangeNum} out of 7`;
+	bottomEmoji.innerHTML = getEmoji(rangeNum);
 });
+
+const getEmoji = (rating) => {
+	switch (Number(rating)) {
+		case 1:
+			return '&#128549';
+		case 2:
+			return '&#128533';
+		case 3:
+			return '&#128528';
+		case 4:
+			return '&#128512';
+		case 5:
+			return '&#128516';
+		case 6:
+			return '&#128513';
+		case 7:
+			return '&#128525';
+	}
+};
 
 // original bookList to start off with
 const bookList = [
@@ -29,7 +51,7 @@ const createBookTable = (bookList, tableLocation) => {
 	bookList.sort(function (a, b) {
 		return b.rating - a.rating;
 	});
-	clearBox(bookTable);
+	clearTable(bookTable);
 	createLabelBoxes(bookTable);
 	for (book of bookList) {
 		createBook(book, bookTable);
@@ -54,14 +76,14 @@ const createBook = ({ title, author, rating }, bookTable) => {
 
 	const ratingDiv = document.createElement('div');
 	ratingDiv.classList.add('rating');
-	ratingDiv.innerText = rating;
+	ratingDiv.innerHTML = `${rating} ${getEmoji(rating)}`;
 	bookLi.append(ratingDiv);
 };
 
 // Function for submit button, shows a warning if the entire rating has not been filled out
 submitBtn.addEventListener('click', function () {
 	const newBook = getBook();
-	console.log('newBook:', newBook);
+	clearBoxes();
 	if (newBook) {
 		// takes away warning if it is already there
 		if (document.querySelector('#warning').classList.contains('show')) {
@@ -71,6 +93,15 @@ submitBtn.addEventListener('click', function () {
 		createBookTable(bookList, mainTable);
 	}
 });
+
+// clears the input for the next review
+const clearBoxes = () => {
+	document.getElementById('input-title').value = '';
+	document.getElementById('input-author').value = '';
+	document.getElementById('input-rating').value = 1;
+	bottomEmoji.innerHTML = '&#128566';
+	ratingNum.innerText = '1 out of 7';
+};
 
 // gets input from user rating and pushes it to bookList
 const getBook = () => {
@@ -90,8 +121,7 @@ const getBook = () => {
 	}
 };
 
-function clearBox(element) {
-	console.log('Clearing!');
+function clearTable(element) {
 	element.innerHTML = '';
 }
 

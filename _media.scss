@@ -13,6 +13,12 @@
 		height: 120vh;
 	}
 
+	#add-info {
+		#rating-box {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
 	.container {
 		padding: 0 1.5rem;
 	}
