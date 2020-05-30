@@ -105,9 +105,9 @@ const clearBoxes = () => {
 
 // gets input from user rating and pushes it to bookList
 const getBook = () => {
-	let title = document.getElementById('input-title').value;
-	let author = document.getElementById('input-author').value;
-	let rating = Number(document.getElementById('input-rating').value);
+	let title = document.querySelector('#input-title').value;
+	let author = document.querySelector('#input-author').value;
+	let rating = Number(document.querySelector('#input-rating').value);
 	if (title && author && rating) {
 		const newBook = {
 			title,

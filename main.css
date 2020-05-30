@@ -44,7 +44,7 @@ main {
 #main-table ul li {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-bottom: 2px solid #1c2c5c;
+  border-bottom: 3px solid #1c2c5c;
 }
 
 #main-table ul li:nth-child(1) {
